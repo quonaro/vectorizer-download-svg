@@ -37,8 +37,13 @@ Debug helpers are exposed on `window`:
 ## Usage
 
 1. Open <https://vectorizer.ai> and upload/vectorize an image.
-2. Wait for vectorization to finish — the floating button in the bottom-right corner shows how many paths were captured, e.g. `⬇ SVG (1247)`.
-3. Click the button to download the result as `*.svg`.
+2. Wait for vectorization to finish — the floating button in the bottom-right corner shows how many paths were captured, e.g. `⬇ SVG (10)`:
+
+   ![Vectorized result with the floating SVG export button](screenshots/02-result-with-button.png)
+
+3. Click the button — the file is downloaded as `*.svg` and opens as real vector art:
+
+   ![Downloaded SVG opened in the browser](screenshots/03-downloaded-svg.png)
 
 > **Note:** The script must be active *before* the vectorized result is rendered. If you install/enable it while a result is already on screen, just re-run or re-upload the image.
 
@@ -47,6 +52,10 @@ Debug helpers are exposed on `window`:
 - Only canvas `Path2D` draws are captured; images or text rendered by other means are not exported.
 - `arcTo` and complex transforms are approximated where the canvas API semantics differ from SVG.
 - Works against the current vectorizer.ai frontend — a site update may break path capture (check `__vzMarkers` / console for `[vz-export]` logs).
+
+## Credits
+
+Special thanks to **[@keklick1337](https://github.com/keklick1337)** — this project was inspired by and builds upon his [vectorizer.ai-svg-save-from-console](https://github.com/keklick1337/vectorizer.ai-svg-save-from-console) script. 🙏
 
 ## Disclaimer
 
